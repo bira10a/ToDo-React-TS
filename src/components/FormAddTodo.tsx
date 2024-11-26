@@ -13,16 +13,17 @@ const Container = styled.div`
 
 interface FormAddTodoProps {
   changeValueTodo: (event: React.ChangeEvent<HTMLInputElement>) => void,
-  valueTodo: string
+  valueTodo: string,
+  addTodo: () => void
 }
 
 const FormAddTodo: React.FC<FormAddTodoProps> = (props) => {
-  const { changeValueTodo, valueTodo } = props;
+  const { changeValueTodo, valueTodo, addTodo } = props;
 
   return (
     <Container>
       <input value={valueTodo} onChange={changeValueTodo} />
-      <button>Add new Todo</button>
+      <button onClick={addTodo} >Add new Todo</button>
     </Container>
   )
 }
